@@ -9,17 +9,16 @@
 <body>
 
 <div class="container">
-
-    <!-- Шапка с логотипом -->
+    <!-- Шапка -->
     <div class="header">
         <div class="logo">
             <span class="icon">⚡</span> SPORT<span class="accent">EDGE</span>
         </div>
-        <div class="nav">
-            <a href="#">Главная</a>
-            <a href="#">Футбол</a>
-            <a href="#">UFC/MMA</a>
-            <a href="#">Бокс</a>
+        <div class="nav" id="navMenu">
+            <a href="#" data-category="all" class="nav-link active">Все</a>
+            <a href="#" data-category="football" class="nav-link">⚽ Футбол</a>
+            <a href="#" data-category="ufc" class="nav-link">🥊 UFC/MMA</a>
+            <a href="#" data-category="boxing" class="nav-link">🥊 Бокс</a>
         </div>
     </div>
 
@@ -32,7 +31,7 @@
         <a href="https://t.me/sportinsidenews" class="tg-button" target="_blank">Подписаться →</a>
     </div>
 
-    <!-- Место под РСЯ (верхний блок) -->
+    <!-- Реклама РСЯ верхняя -->
     <div class="ads-container">
         <div class="ad-label">— Реклама —</div>
         <div id="yandex_rtb_R-A-ВАШ_БЛОК" class="rya-placeholder">
@@ -40,14 +39,20 @@
         </div>
     </div>
 
-    <!-- Секция "Горячие новости" с фото -->
+    <!-- Заголовок + счетчик новостей -->
     <div class="section-title">
-        <h2>🔥 Горячие новости</h2>
+        <h2 id="sectionTitle">📰 Все новости</h2>
         <div class="line"></div>
+        <span id="newsCount" class="news-count"></span>
     </div>
 
-    <!-- Здесь будут новости из JavaScript (с фотографиями) -->
-    <div id="news" class="news-grid"></div>
+    <!-- Список новостей (полные карточки) -->
+    <div id="newsList" class="news-list"></div>
+
+    <!-- Кнопка "Загрузить ещё" -->
+    <div id="loadMoreBtn" class="load-more-btn" style="display: none;">
+        <button onclick="loadMoreNews()">Показать ещё новости ↓</button>
+    </div>
 
     <!-- Реклама между новостями -->
     <div class="ads-container mid-ad">
@@ -57,14 +62,7 @@
         </div>
     </div>
 
-    <!-- Секция "Сейчас читают" -->
-    <div class="section-title">
-        <h2>📈 Популярное сегодня</h2>
-        <div class="line"></div>
-    </div>
-    <div id="popular" class="popular-list"></div>
-
-    <!-- Букмекерский блок (подогрев аудитории) -->
+    <!-- Букмекерский блок -->
     <div class="bet-block">
         <div class="bet-icon">🎲</div>
         <div class="bet-content">
@@ -81,6 +79,14 @@
         <p>© 2026 SPORTEDGE — Новости футбола, UFC, MMA. Все права защищены.</p>
         <p>Сотрудничество: sportedge@example.com | <a href="#" style="color:#f97316;">Реклама на сайте</a></p>
     </footer>
+</div>
+
+<!-- Модальное окно для полной новости -->
+<div id="newsModal" class="modal">
+    <div class="modal-content">
+        <span class="close-btn" onclick="closeModal()">&times;</span>
+        <div id="modalBody"></div>
+    </div>
 </div>
 
 <script src="script.js"></script>

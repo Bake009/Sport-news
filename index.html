@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Спорт-Новости</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background: #0a0c12;
+            color: white;
+            padding: 20px;
+        }
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 20px;
+            color: #f97316;
+        }
+        .news-card {
+            background: #1a1f2b;
+            border-radius: 16px;
+            padding: 15px;
+            margin-bottom: 15px;
+        }
+        .tg-banner {
+            background: #1e293b;
+            border-radius: 16px;
+            padding: 15px;
+            text-align: center;
+            margin: 20px 0;
+        }
+        .tg-button {
+            background: #26a5e4;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 40px;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 10px;
+        }
+        .ads {
+            background: #0f1119;
+            padding: 20px;
+            text-align: center;
+            border-radius: 16px;
+            margin: 20px 0;
+            border: 1px dashed #f97316;
+        }
+    </style>
+</head>
+<body>
+
+<div class="logo">⚽ SPORTEDGE 🔥</div>
+
+<div class="tg-banner">
+    📢 <strong>Больше новостей в Telegram!</strong><br>
+    <a href="https://t.me/https://t.me/sportinsidenews" class="tg-button">📲 Подписаться</a>
+</div>
+
+<div class="ads">
+    [Реклама Яндекс.РСЯ — вставишь код позже]
+</div>
+
+<div id="news"></div>
+
+<div class="ads">
+    [Реклама Яндекс.РСЯ — второй блок]
+</div>
+
+<script>
+    const news = [
+        "⚽ Реал выиграл дерби у Атлетико 3:1",
+        "🥊 Ислам Махачев: 'Я лучший в мире'",
+        "💥 Конор Макгрегор анонсировал возвращение",
+        "🏆 Хабиб: 'У UFC проблемы со звездами'"
+    ];
+    let html = '';
+    for(let i = 0; i < news.length; i++) {
+        html += '<div class="news-card">📰 ' + news[i] + '<br><small>Новость загружена</small></div>';
+    }
+    document.getElementById('news').innerHTML = html;
+</script>
+
+<p style="text-align:center; margin-top:30px; color:gray;">Спорт-новости 18+</p>
+</body>
+</html>
